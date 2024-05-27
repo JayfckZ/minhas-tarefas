@@ -35,7 +35,7 @@ export const Descricao = styled.textarea`
   margin: 16px 0;
   resize: none;
   border: none;
-  background-color: none;
+  background-color: #fcfcfc;
 `
 
 export const BarraAcoes = styled.div`
