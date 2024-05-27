@@ -1,23 +1,25 @@
 import * as S from "./styles"
 import Tarefa from "../../components/Tarefa"
 
+import * as enums from "../../utils/enums/Tarefa"
+
 const tarefas = [
   {
     titulo: "Estudar Python",
-    prioridade: "Importante",
-    status: "Pendente",
+    prioridade: enums.Prioridade.IMPORTANTE,
+    status: enums.Status.PENDENTE,
     descricao: "Estudar e implementar a biblioteca NumPy."
   },
   {
     titulo: "Estudar React/Redux",
-    prioridade: "Importante",
-    status: "Pendente",
+    prioridade: enums.Prioridade.NORMAL,
+    status: enums.Status.PENDENTE,
     descricao: "Estudar Redux."
   },
   {
     titulo: "Trabalho sobre Grafos",
-    prioridade: "Urgente",
-    status: "Pendente",
+    prioridade: enums.Prioridade.URGENTE,
+    status: enums.Status.CONCLUIDA,
     descricao: "Finalizar apresentação sobre Matrizes Incidentes."
   }
 ]
