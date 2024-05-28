@@ -32,18 +32,24 @@ const ListaDeTarefas = () => {
     }
   }
 
+  const tarefas = filtraTarefas()
+
   return (
     <S.Container>
-      <p>
-        2 tarefas marcadas como: &quot;Categoria&ldquo; e &quot;{termo}&ldquo;
-      </p>
+      <S.Resultado>
+        {tarefas.length}
+        {tarefas.length !== 1
+          ? " tarefas marcadas como:"
+          : " tarefa marcada como:"}
+
+        {valor !== undefined
+          ? ` ${valor[0].toUpperCase() + valor.slice(1)}`
+          : " Todas"}
+
+        {termo !== undefined && termo.length > 0 ? ` e "${termo}"` : ""}
+      </S.Resultado>
       <ul>
-        <li>{termo}</li>
-        <li>{criterio}</li>
-        <li>{valor}</li>
-      </ul>
-      <ul>
-        {filtraTarefas().map((t) => (
+        {tarefas.map((t) => (
           <li key={t.titulo}>
             <Tarefa
               id={t.id}
