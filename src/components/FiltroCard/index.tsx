@@ -1,16 +1,55 @@
+import { useDispatch, useSelector } from "react-redux"
 import * as S from "./styles"
+import { alteraFiltro } from "../../store/reducers/filtro"
+import * as enums from "../../utils/enums/Tarefa"
+import { RootReducer } from "../../store"
 
 export type Props = {
-  ativo?: boolean
-  contador: number
   legenda: string
+  criterio: "prioridade" | "status" | "todas"
+  valor?: enums.Prioridade | enums.Status
 }
 
-const FiltroCard = ({ ativo, contador, legenda }: Props) => (
-  <S.Card ativo={ativo}>
-    <S.Contador>{contador}</S.Contador>
-    <S.Label>{legenda}</S.Label>
-  </S.Card>
-)
+const FiltroCard = ({ legenda, criterio, valor }: Props) => {
+  const dispatch = useDispatch()
+  const { filtro, tarefas } = useSelector((state: RootReducer) => state)
+
+  const estaAtivo = () => {
+    const mesmoCriterio = filtro.criterio === criterio
+    const mesmoValor = filtro.valor === valor
+
+    return mesmoCriterio && mesmoValor
+  }
+
+  const ativo = estaAtivo()
+
+  const contaTarefas = () => {
+    if (criterio === "todas") return tarefas.itens.length
+    if (criterio === "prioridade") {
+      return tarefas.itens.filter((item) => item.prioridade === valor).length
+    }
+    if (criterio === "status") {
+      return tarefas.itens.filter((item) => item.status === valor).length
+    }
+  }
+
+  const contador = contaTarefas()
+
+  const filtrar = () => {
+    dispatch(
+      alteraFiltro({
+        criterio,
+        valor
+      })
+    )
+  }
+
+  return (
+    <S.Card onClick={filtrar} ativo={ativo}>
+      <S.Contador>{contador}</S.Contador>
+      <S.Label>{legenda}</S.Label>
+    </S.Card>
+  )
+}
 
 export default FiltroCard

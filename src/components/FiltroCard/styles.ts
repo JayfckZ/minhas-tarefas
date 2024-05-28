@@ -1,7 +1,8 @@
 import { styled } from "styled-components"
-import { Props } from "."
 
-type propStyle = Omit<Props, "contador" | "legenda">
+type propStyle = {
+  ativo: boolean
+}
 
 export const Card = styled.div<propStyle>`
   padding: 8px;
@@ -9,6 +10,7 @@ export const Card = styled.div<propStyle>`
   background-color: ${(props) => (props.ativo ? "white" : "#fcfcfc")};
   color: ${(props) => (props.ativo ? "#1e90ff" : "#5e5e5e")};
   border-radius: 8px;
+  cursor: pointer;
 `
 
 export const Contador = styled.span`
