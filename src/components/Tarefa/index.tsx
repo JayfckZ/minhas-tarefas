@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
 import * as S from "./styles"
+import { BotaoSalvar } from "../../styles"
 import { remover, editar } from "../../store/reducers/tarefas"
 import TarefaClass from "../../models/Tarefas"
 
@@ -58,7 +59,7 @@ const Tarefa = ({
       <S.BarraAcoes>
         {estaEditando ? (
           <>
-            <S.BotaoSalvar onClick={editarTarefa}>Salvar</S.BotaoSalvar>
+            <BotaoSalvar onClick={editarTarefa}>Salvar</BotaoSalvar>
             <S.BotaoRemover onClick={cancelarEdicao}>Cancelar</S.BotaoRemover>
           </>
         ) : (

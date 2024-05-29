@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import * as S from "./styles"
+import { MainContainer, Titulo } from "../../styles/"
 import Tarefa from "../../components/Tarefa"
 import { RootReducer } from "../../store"
 
@@ -35,8 +35,8 @@ const ListaDeTarefas = () => {
   const tarefas = filtraTarefas()
 
   return (
-    <S.Container>
-      <S.Resultado>
+    <MainContainer>
+      <Titulo as="p">
         {tarefas.length}
         {tarefas.length !== 1
           ? " tarefas marcadas como:"
@@ -47,7 +47,7 @@ const ListaDeTarefas = () => {
           : " Todas"}
 
         {termo !== undefined && termo.length > 0 ? ` e "${termo}"` : ""}
-      </S.Resultado>
+      </Titulo>
       <ul>
         {tarefas.map((t) => (
           <li key={t.titulo}>
@@ -61,7 +61,7 @@ const ListaDeTarefas = () => {
           </li>
         ))}
       </ul>
-    </S.Container>
+    </MainContainer>
   )
 }
 

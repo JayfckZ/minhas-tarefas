@@ -1,6 +1,10 @@
+import BarraLateral from "../../containers/BarraLateral"
+import Formulario from "../../containers/Formulario"
+
 const NovaTarefa = () => (
   <>
-    <h1>Olá</h1>
+    <BarraLateral />
+    <Formulario />
   </>
 )
 
