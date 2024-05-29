@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import { styled } from "styled-components"
+import variaveis from "../../styles/variaveis"
 
 export const Circulo = styled(Link)`
   height: 64px;
   width: 64px;
-  background-color: #44bd32;
+  background-color: ${variaveis.verde};
   color: #fff;
   text-decoration: none;
   position: fixed;
@@ -20,8 +21,8 @@ export const Circulo = styled(Link)`
 
   &:hover {
     background-color: #fff;
-    color: #44bd32;
+    color: ${variaveis.verde};
     outline: 8px solid rgb(68, 189, 50, 0.3);
-    // border: 3px solid #44bd32;
+    // border: 3px solid ${variaveis.verde};
   }
 `

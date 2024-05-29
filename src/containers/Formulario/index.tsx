@@ -16,15 +16,15 @@ const Formulario = () => {
 
   const adicionarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
-    const tarefaAdd = new Tarefa(
-      titulo,
-      prioridade,
-      enums.Status.PENDENTE,
-      descricao,
-      9
-    )
 
-    dispatch(adicionar(tarefaAdd))
+    dispatch(
+      adicionar({
+        titulo,
+        prioridade,
+        status: enums.Status.PENDENTE,
+        descricao
+      })
+    )
     navigate("/")
   }
 
