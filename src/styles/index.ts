@@ -54,6 +54,14 @@ export const Botao = styled.button`
   background-color: ${variaveis.cinza};
   border-radius: 8px;
   margin-right: 8px;
+
+  @media (width <= 767px) {
+    &#btnRegistro {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+  }
 `
 
 export const BotaoSalvar = styled(Botao)`

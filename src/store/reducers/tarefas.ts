@@ -10,24 +10,11 @@ const initialState: TarefasState = {
   itens: [
     {
       id: 1,
-      titulo: "Estudar Python",
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PENDENTE,
-      descricao: "Estudar e implementar a biblioteca NumPy."
-    },
-    {
-      id: 2,
-      titulo: "Estudar React/Redux",
+      titulo: "Minha Tarefa",
       prioridade: enums.Prioridade.NORMAL,
       status: enums.Status.PENDENTE,
-      descricao: "Estudar e implementar Redux no React."
-    },
-    {
-      id: 3,
-      titulo: "Finalizar trabalho sobre Grafos",
-      prioridade: enums.Prioridade.URGENTE,
-      status: enums.Status.CONCLUIDA,
-      descricao: "Finalizar apresentação sobre Matrizes Incidentes."
+      descricao:
+        "Adicione, edite ou remova tarefas de sua lista. Adicione filtros de prioridade e dê atenção a elas! Você pode pesquisar por filtro, status ou nome."
     }
   ]
 }

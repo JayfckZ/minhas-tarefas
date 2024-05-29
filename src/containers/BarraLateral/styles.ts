@@ -6,7 +6,7 @@ export const Aside = styled.aside`
   height: 100vh;
 
   @media (width <= 767px) {
-    height: 303px;
+    height: auto;
     border-radius: 0 0 16px 16px;
   }
 `

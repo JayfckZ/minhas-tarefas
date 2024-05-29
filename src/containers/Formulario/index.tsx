@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom"
 import { MainContainer, Titulo, Campo, BotaoSalvar } from "../../styles/"
 import { Form, Opcoes, Opcao } from "./styles"
 import * as enums from "../../utils/enums/Tarefa"
-import Tarefa from "../../models/Tarefas"
 import { adicionar } from "../../store/reducers/tarefas"
 
 const Formulario = () => {
@@ -45,7 +44,7 @@ const Formulario = () => {
           placeholder="Descrição da Tarefa"
         />
         <Opcoes>
-          <p>Prioridades</p>
+          <p>Prioridade: </p>
           {Object.values(enums.Prioridade).map((prioridade) => (
             <Opcao key={prioridade}>
               <input
@@ -62,7 +61,9 @@ const Formulario = () => {
             </Opcao>
           ))}
         </Opcoes>
-        <BotaoSalvar type="submit">Registrar</BotaoSalvar>
+        <BotaoSalvar id="btnRegistro" type="submit">
+          Registrar
+        </BotaoSalvar>
       </Form>
     </MainContainer>
   )
